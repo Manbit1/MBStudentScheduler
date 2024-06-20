@@ -100,7 +100,7 @@ public class newScheduleItemDialogue{
                     }
                 }
             });
-            //cancel button, self explanatory.
+            //cancel button, self explanatory
             cancel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
