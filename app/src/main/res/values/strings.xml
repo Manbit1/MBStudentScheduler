@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MB\'S student scheduler</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_notes">Notes</string>
+    <string name="menu_schedule">Schedule</string>
+    <string name="menu_settings">Settings</string>
+    <string name="nav_header_main">Welcome, to my swamp</string>
+    <string name="nav_drawer_open">open navigation drawer</string>
+    <string name="nav_drawer_close">close navigation drawer</string>
+    <string name="home_fragment_classID">ClassID</string>
+    <string name="home_fragment_RoomID">RoomID</string>
+    <string name="home_fragment_muteButton">Mute</string>
+    <string name="schedule_fragment_prevDay">Previous Day</string>
+    <string name="schedule_fragment_nextDay">Next Day</string>
+    <string name="schedule_fragment_today">friday</string>
+    <string name="add_schedule_dialog_startTime">Start time</string>
+    <string name="add_schedule_dialog_endTime">End time</string>
+    <string name="add_schedule_dialog_classID">Class name</string>
+    <string name="add_schedule_dialog_roomID">Room name</string>
+    <string name="add_schedule_dialog_doneButton">Done</string>
+    <string name="add_schedule_dialog_cancelButton">Cancel</string>
+    <string name="add_schedule_dialog_alarm">Activate alarm?</string>
+    <string name="scheduleItemDiaogue_starttime_classname_problem">Please check class name or times</string>
+</resources>

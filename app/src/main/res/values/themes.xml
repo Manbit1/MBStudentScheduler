@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MBSStudentScheduler" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/dark_blue</item>
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="Theme.MBSStudentScheduler" parent="Base.Theme.MBSStudentScheduler" />
+</resources>
