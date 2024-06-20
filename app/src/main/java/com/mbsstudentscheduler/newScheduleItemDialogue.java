@@ -115,7 +115,7 @@ public class newScheduleItemDialogue{
                 public void onClick(View v) {
                     starter = popTimeListener(startTime, context);
                     
-                }
+                }//I wanted to say something
             });
             //same thing as start button
             endTime.setOnClickListener(new View.OnClickListener() {
