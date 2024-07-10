@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import java.util.Calendar;
 
 public class homeFragment extends Fragment {
-
+    private final int millisInWeek = 569940000;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -27,30 +27,17 @@ public class homeFragment extends Fragment {
         TextView homeRoom = view.findViewById(R.id.home_fragment_roomID);
         TextView timer = view.findViewById(R.id.home_text_timer);
 
-        for (scheduleElement element: scheduleElement.SCArraylist){
-            if (scheduleElement.SCArraylist.isEmpty()){
-                homeClass.setText("No classes set");
-                homeRoom.setText("No class set");
-                timer.setText(" ");
-            }
-            else if (getTimeMills()<element.getStartTime()){
-                int time = getTimeMills()-element.getStartTime();
-                homeClass.setText(element.getClassID());
-                homeRoom.setText(element.getRoomID());
-                int minutes = ((time / (1000*60)) % 60);
-                int hours   = ((time / (1000*60*60)) % 24);
-                int days = (time / (1000*60*60*24));
-                if (days < 1) {
-                    timer.setText(hours+":"+minutes);
-                }
-                else {
-                    timer.setText(days+":"+hours+":"+minutes);
-                }
-            }
-            else {
-                Log.d("kittykat", "reset to the first element");
-            }
+        dbloader();
+
+        if (scheduleElement.SCArraylist.isEmpty()){
+            homeClass.setText("No classes set");
+            homeRoom.setText("No class set");
+            timer.setText("00:00");
         }
+        else {
+
+        }
+
 
         return view;
     }
@@ -69,5 +56,52 @@ public class homeFragment extends Fragment {
         time = ((((((day * 24) + hour) * 60) + minute) * 60) * 1000);
 
         return time;
+    }
+    private void dbloader() {
+        SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(requireContext());
+        sqLiteManager.putDataInArray();
+    }
+
+    private void setFormatTime(TextView timer, int time){
+        int minutes = ((time / (1000*60)) % 60);
+        int hours   = ((time / (1000*60*60)) % 24);
+        int days = (time / (1000*60*60*24));
+
+        if(days<1){
+            if (hours<10){
+                if (minutes<10){
+                    timer.setText("0"+hours+":0"+minutes);
+                }
+                else {
+                    timer.setText("0"+hours+":"+minutes);
+                }
+            }
+            else {
+                if (minutes<10){
+                    timer.setText(hours+":0"+minutes);
+                }
+                else {
+                    timer.setText(hours+":"+minutes);
+                }
+            }
+        }
+        else {
+            if (hours<10){
+                if (minutes<10){
+                    timer.setText(days+":0"+hours+":0"+minutes);
+                }
+                else {
+                    timer.setText(days+":0"+hours+":"+minutes);
+                }
+            }
+            else {
+                if (minutes<10){
+                    timer.setText(days+":"+hours+":0"+minutes);
+                }
+                else {
+                    timer.setText(days+":"+hours+":"+minutes);
+                }
+            }
+        }
     }
 }
