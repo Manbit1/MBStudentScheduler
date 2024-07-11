@@ -15,8 +15,10 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Calendar;
 
+//TODO: make the counter automatically update and implement a notification system
+
 public class homeFragment extends Fragment {
-    private final int millisInWeek = 569940000;
+    private final int millisInWeek = 604740000;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,7 +37,20 @@ public class homeFragment extends Fragment {
             timer.setText("00:00");
         }
         else {
-
+            if (getTimeMills()>scheduleElement.SCArraylist.get(scheduleElement.SCArraylist.size()-1).getStartTime()){
+                homeClass.setText(scheduleElement.SCArraylist.get(0).getClassID());
+                homeRoom.setText(scheduleElement.SCArraylist.get(0).getRoomID());
+                setFormatTime(timer,(scheduleElement.SCArraylist.get(0).getStartTime()+millisInWeek)-getTimeMills());
+            }
+            else {
+                int i = 0;
+                while (getTimeMills()>scheduleElement.SCArraylist.get(i).getStartTime()){
+                    i++;
+                }
+                homeClass.setText(scheduleElement.SCArraylist.get(i).getClassID());
+                homeRoom.setText(scheduleElement.SCArraylist.get(i).getRoomID());
+                setFormatTime(timer,scheduleElement.SCArraylist.get(i).getStartTime()-getTimeMills());
+            }
         }
 
 
