@@ -1,12 +1,11 @@
 package com.mbsstudentscheduler;
 
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -30,29 +29,7 @@ public class homeFragment extends Fragment {
         TextView timer = view.findViewById(R.id.home_text_timer);
 
         dbloader();
-
-        if (scheduleElement.SCArraylist.isEmpty()){
-            homeClass.setText("No classes set");
-            homeRoom.setText("No class set");
-            timer.setText("00:00");
-        }
-        else {
-            if (getTimeMills()>scheduleElement.SCArraylist.get(scheduleElement.SCArraylist.size()-1).getStartTime()){
-                homeClass.setText(scheduleElement.SCArraylist.get(0).getClassID());
-                homeRoom.setText(scheduleElement.SCArraylist.get(0).getRoomID());
-                setFormatTime(timer,(scheduleElement.SCArraylist.get(0).getStartTime()+millisInWeek)-getTimeMills());
-            }
-            else {
-                int i = 0;
-                while (getTimeMills()>scheduleElement.SCArraylist.get(i).getStartTime()){
-                    i++;
-                }
-                homeClass.setText(scheduleElement.SCArraylist.get(i).getClassID());
-                homeRoom.setText(scheduleElement.SCArraylist.get(i).getRoomID());
-                setFormatTime(timer,scheduleElement.SCArraylist.get(i).getStartTime()-getTimeMills());
-            }
-        }
-
+        setUpCounter(homeClass,homeRoom,timer);
 
         return view;
     }
@@ -73,6 +50,7 @@ public class homeFragment extends Fragment {
         return time;
     }
     private void dbloader() {
+        scheduleElement.SCArraylist.clear();
         SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(requireContext());
         sqLiteManager.putDataInArray();
     }
@@ -119,4 +97,41 @@ public class homeFragment extends Fragment {
             }
         }
     }
+    private void setUpCounter(TextView homeClass, TextView homeRoom, TextView timer){
+        if (scheduleElement.SCArraylist.isEmpty()){
+            homeClass.setText("No classes set");
+            homeRoom.setText("No class set");
+            timer.setText("00:00");
+        }
+        else {
+
+            if (getTimeMills() > scheduleElement.SCArraylist.get(scheduleElement.SCArraylist.size() - 1).getStartTime()) { //if the last start time in the array is less than the current time
+                homeClass.setText(scheduleElement.SCArraylist.get(0).getClassID());
+                homeRoom.setText(scheduleElement.SCArraylist.get(0).getRoomID());
+                setFormatTime(timer, (scheduleElement.SCArraylist.get(0).getStartTime() + millisInWeek) - getTimeMills());
+            } else {
+                int i = 0;
+                while (getTimeMills() > scheduleElement.SCArraylist.get(i).getStartTime()) {
+                    i++;
+                }
+                homeClass.setText(scheduleElement.SCArraylist.get(i).getClassID());
+                homeRoom.setText(scheduleElement.SCArraylist.get(i).getRoomID());
+                setFormatTime(timer, scheduleElement.SCArraylist.get(i).getStartTime() - getTimeMills());
+            }
+            refresh(homeClass, homeRoom, timer);
+        }
+    }
+
+    private void refresh(TextView homeClass, TextView homeRoom, TextView timer){
+        final Handler handler = new Handler();
+
+        final Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                setUpCounter(homeClass,homeRoom,timer);
+            }
+        };
+        handler.postDelayed(runnable, 1000);
+    }
+
 }
