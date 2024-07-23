@@ -1,5 +1,10 @@
 package com.mbsstudentscheduler;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -10,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
 import java.util.Calendar;
@@ -104,19 +110,20 @@ public class homeFragment extends Fragment {
             timer.setText("00:00");
         }
         else {
-
+            int i = 0;
             if (getTimeMills() > scheduleElement.SCArraylist.get(scheduleElement.SCArraylist.size() - 1).getStartTime()) { //if the last start time in the array is less than the current time
                 homeClass.setText(scheduleElement.SCArraylist.get(0).getClassID());
                 homeRoom.setText(scheduleElement.SCArraylist.get(0).getRoomID());
                 setFormatTime(timer, (scheduleElement.SCArraylist.get(0).getStartTime() + millisInWeek) - getTimeMills());
             } else {
-                int i = 0;
                 while (getTimeMills() > scheduleElement.SCArraylist.get(i).getStartTime()) {
                     i++;
                 }
                 homeClass.setText(scheduleElement.SCArraylist.get(i).getClassID());
                 homeRoom.setText(scheduleElement.SCArraylist.get(i).getRoomID());
                 setFormatTime(timer, scheduleElement.SCArraylist.get(i).getStartTime() - getTimeMills());
+            }
+            if (getTimeMills()-scheduleElement.SCArraylist.get(i).getStartTime()==300000){
             }
             refresh(homeClass, homeRoom, timer);
         }
