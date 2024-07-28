@@ -120,6 +120,9 @@ public class scheduleElement {
     public boolean isMuteState() {
         return muteState;
     }
+    public void setMuteState(boolean state){
+        muteState = state;
+    }
     
     public boolean isAlarm() {
         return isAlarm;
