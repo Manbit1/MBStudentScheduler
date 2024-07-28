@@ -56,6 +56,10 @@ MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/manbit/.gr
 		INJECTED from /home/manbit/Documents/projects/android/MB's student scheduler/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/manbit/Documents/projects/android/MB's student scheduler/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from /home/manbit/Documents/projects/android/MB's student scheduler/app/src/main/AndroidManifest.xml:4:1-72
+	android:name
+		ADDED from /home/manbit/Documents/projects/android/MB's student scheduler/app/src/main/AndroidManifest.xml:4:18-70
 application
 ADDED from /home/manbit/Documents/projects/android/MB's student scheduler/app/src/main/AndroidManifest.xml:5:5-25:19
 INJECTED from /home/manbit/Documents/projects/android/MB's student scheduler/app/src/main/AndroidManifest.xml:5:5-25:19

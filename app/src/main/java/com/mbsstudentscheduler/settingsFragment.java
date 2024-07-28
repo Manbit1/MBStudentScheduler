@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.util.Objects;
-
+//TODO: I need to make the settings tab actually work with the other tabs
 public class settingsFragment extends Fragment{
     
     @Nullable

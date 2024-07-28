@@ -1,4 +1,4 @@
-#Tue Jul 23 18:32:20 AST 2024
+#Sun Jul 28 11:44:12 AST 2024
 base.0=/home/manbit/Documents/projects/android/MB's student scheduler/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/manbit/Documents/projects/android/MB's student scheduler/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/home/manbit/Documents/projects/android/MB's student scheduler/app/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex
