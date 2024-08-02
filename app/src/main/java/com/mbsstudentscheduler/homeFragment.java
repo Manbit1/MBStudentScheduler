@@ -30,6 +30,7 @@ import java.util.Calendar;
 
 
 public class homeFragment extends Fragment {
+    scheduleElement element;
     private final int millisInWeek = 604740000;
     @Nullable
     @Override
@@ -43,6 +44,25 @@ public class homeFragment extends Fragment {
 
         dbloader();
         setUpCounter(homeClass,homeRoom,timer,getContext());
+        if (element.isMuteState()==true)
+            mute.setText("unmute");
+        else
+            mute.setText("mute");
+
+        mute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (element.isMuteState()==true) {
+                    element.setMuteState(false);
+                    mute.setText("mute");
+                }
+                else{
+                    element.setMuteState(true);
+                    mute.setText("unmute");
+                }
+            }
+        });
+
         return view;
     }
 
@@ -71,7 +91,6 @@ public class homeFragment extends Fragment {
         int minutes = ((time / (1000*60)) % 60);
         int hours   = ((time / (1000*60*60)) % 24);
         int days = (time / (1000*60*60*24));
-
         if(days<1){
             if (hours<10){
                 if (minutes<10){
@@ -110,6 +129,8 @@ public class homeFragment extends Fragment {
         }
     }
     private void setUpCounter(TextView homeClass, TextView homeRoom, TextView timer, Context context){
+        scheduleElement element;
+
         if (scheduleElement.SCArraylist.isEmpty()){
             homeClass.setText("No classes set");
             homeRoom.setText("No class set");
@@ -118,19 +139,21 @@ public class homeFragment extends Fragment {
         else {
             int i = 0;
             if (getTimeMills() > scheduleElement.SCArraylist.get(scheduleElement.SCArraylist.size() - 1).getStartTime()) { //if the last start time in the array is less than the current time
-                homeClass.setText(scheduleElement.SCArraylist.get(i).getClassID());
-                homeRoom.setText(scheduleElement.SCArraylist.get(i).getRoomID());
-                setFormatTime(timer, (scheduleElement.SCArraylist.get(i).getStartTime() + millisInWeek) - getTimeMills());
+                element = scheduleElement.SCArraylist.get(i);
+                homeClass.setText(element.getClassID());
+                homeRoom.setText(element.getRoomID());
+                setFormatTime(timer, (element.getStartTime() + millisInWeek) - getTimeMills());
             } else {
                 while (getTimeMills() > scheduleElement.SCArraylist.get(i).getStartTime()) {
                     i++;
                 }
-                homeClass.setText(scheduleElement.SCArraylist.get(i).getClassID());
-                homeRoom.setText(scheduleElement.SCArraylist.get(i).getRoomID());
-                setFormatTime(timer, scheduleElement.SCArraylist.get(i).getStartTime() - getTimeMills());
+                element = scheduleElement.SCArraylist.get(i);
+                homeClass.setText(element.getClassID());
+                homeRoom.setText(element.getRoomID());
+                setFormatTime(timer, element.getStartTime() - getTimeMills());
             }
+            this.element = element;
             notification(getTimeMills(),scheduleElement.SCArraylist.get(i),context);
-            // The alarm function goes here
             refresh(homeClass, homeRoom, timer,context);
         }
     }
