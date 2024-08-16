@@ -19,6 +19,7 @@ drawable ic_menu_home
 drawable ic_menu_notes
 drawable ic_menu_schedule
 drawable ic_menu_settings
+drawable ic_notif
 drawable ic_room_id
 drawable ic_start_time
 id addScheduleElement

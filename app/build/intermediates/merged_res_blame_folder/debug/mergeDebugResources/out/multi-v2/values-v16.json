@@ -4,7 +4,7 @@
             "outputFile": "com.mbsstudentscheduler.app-mergeDebugResources-30:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/home/manbit/.gradle/caches/transforms-4/b3b658aea3ee6e8129197e2579f3f988/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
+                    "source": "C:\\Users\\manbit\\.gradle\\caches\\transforms-4\\a637f3543abeb697cfdfa5d7129dcb6c\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/manbit/.gradle/caches/transforms-4/cafc36e40355ffa3bac68115db765d62/transformed/core-1.9.0/res/values-v16/values-v16.xml",
+                    "source": "C:\\Users\\manbit\\.gradle\\caches\\transforms-4\\556edc2893255bcc9b2dad75028d3361\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="5px"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -24,9 +25,9 @@
                 android:layout_height="56dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:src="@drawable/ic_class_id"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/ic_class_id" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/roomIdImage"
@@ -34,9 +35,9 @@
                 android:layout_height="56dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:src="@drawable/ic_room_id"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/classIdImage"
-                android:src="@drawable/ic_room_id" />
+                app:layout_constraintTop_toBottomOf="@+id/classIdImage" />
 
             <ImageView
                 android:id="@+id/startTimeImage"
@@ -44,9 +45,9 @@
                 android:layout_height="56dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="120dp"
+                android:src="@drawable/ic_start_time"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/ic_start_time" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -54,11 +55,11 @@
                 android:layout_height="56dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="120dp"
+                android:src="@drawable/ic_end_time"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/startTimeImage"
-                app:layout_constraintVertical_bias="0.0"
-                android:src="@drawable/ic_end_time" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/classIdStr"

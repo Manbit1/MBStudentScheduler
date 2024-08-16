@@ -7,11 +7,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.motion.widget.OnSwipe;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.Manifest;
+import android.app.ActivityManager;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,8 +33,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //asks for permission to post notifications
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS},101);
+        }
+        
+        //checks if foreground service is running, if not then run it
+        if (!foregroundServiceRunning()) {
+            startForegroundService(new Intent(this,serviceClass.class));
         }
 
 
@@ -57,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new homeFragment()).commit();
         navigationView.setCheckedItem(R.id.fragment_home);
-        
     }
     
     @Override
@@ -90,5 +99,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             drawer.closeDrawer(GravityCompat.START);
         else
             super.onBackPressed();
+    }
+    //checks if the foreground service is running, if not then return false
+    public boolean foregroundServiceRunning(){
+        ActivityManager activityManager = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service:activityManager.getRunningServices(Integer.MAX_VALUE)){
+            if (serviceClass.class.getName().equals(service.service.getClassName())){
+                return true;
+            }
+        }
+        return false;
     }
 }

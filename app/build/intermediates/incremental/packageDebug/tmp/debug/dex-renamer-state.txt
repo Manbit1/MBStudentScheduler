@@ -1,7 +1,7 @@
-#Sun Jul 28 11:44:12 AST 2024
-base.0=/home/manbit/Documents/projects/android/MB's student scheduler/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/home/manbit/Documents/projects/android/MB's student scheduler/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.2=/home/manbit/Documents/projects/android/MB's student scheduler/app/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex
+#Fri Aug 16 09:35:36 AST 2024
+base.0=C\:\\Users\\manbit\\AndroidStudioProjects\\MBSstudentscheduler\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\manbit\\AndroidStudioProjects\\MBSstudentscheduler\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\manbit\\AndroidStudioProjects\\MBSstudentscheduler\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=12/classes.dex

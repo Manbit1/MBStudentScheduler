@@ -3009,6 +3009,7 @@ int drawable ic_mtrl_checked_circle 0x7f070098
 int drawable ic_mtrl_chip_checked_black 0x7f070099
 int drawable ic_mtrl_chip_checked_circle 0x7f07009a
 int drawable ic_mtrl_chip_close_circle 0x7f07009b
+int drawable ic_notif 0x7f0700e9
 int drawable ic_room_id 0x7f07009c
 int drawable ic_search_black_24 0x7f07009d
 int drawable ic_start_time 0x7f07009e

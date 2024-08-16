@@ -3010,6 +3010,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_notif
 drawable ic_room_id
 drawable ic_search_black_24
 drawable ic_start_time

@@ -1,6 +1,7 @@
 package com.mbsstudentscheduler;
 
 import android.Manifest;
+import android.app.ActivityManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -30,43 +31,58 @@ import java.util.Calendar;
 
 
 public class homeFragment extends Fragment {
-    scheduleElement element;
+    public static scheduleElement element;
     private final int millisInWeek = 604740000;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home,container,false);
+        
 
+        
+        //declarations
         Button mute = view.findViewById(R.id.home_button_muteUnmute);
         TextView homeClass = view.findViewById(R.id.home_text_classID);
         TextView homeRoom = view.findViewById(R.id.home_fragment_roomID);
         TextView timer = view.findViewById(R.id.home_text_timer);
 
+        //sets up the database and the counter
         dbloader();
         setUpCounter(homeClass,homeRoom,timer,getContext());
-        if (element.isMuteState()==true)
-            mute.setText("unmute");
-        else
-            mute.setText("mute");
+        
 
-        mute.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (element.isMuteState()==true) {
-                    element.setMuteState(false);
-                    mute.setText("mute");
+        
+        //sets up the mute button and greys is out if there are no elements in the arraylist
+        if (element!=null) {
+            if (element.isMuteState()==true)
+                mute.setText("unmute");
+            else
+                mute.setText("mute");
+            
+            mute.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (element.isMuteState()==true) {
+                        element.setMuteState(false);
+                        mute.setText("mute");
+                    }
+                    else{
+                        element.setMuteState(true);
+                        mute.setText("unmute");
+                    }
                 }
-                else{
-                    element.setMuteState(true);
-                    mute.setText("unmute");
-                }
-            }
-        });
-
+            });
+        }
+        else {
+            mute.setAlpha(.5f);
+            mute.setClickable(false);
+        }
+        
         return view;
     }
-
-
+    
+    
+    //returns current time in milliseconds
     public int getTimeMills(){
         int time;
         int day;
@@ -81,12 +97,15 @@ public class homeFragment extends Fragment {
 
         return time;
     }
+    
+    //makes an instance of the database and puts everything in the array in the schedule array
     private void dbloader() {
         scheduleElement.SCArraylist.clear();
         SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(requireContext());
         sqLiteManager.putDataInArray();
     }
 
+    //displays the time in D/HH/MM format
     private void setFormatTime(TextView timer, int time){
         int minutes = ((time / (1000*60)) % 60);
         int hours   = ((time / (1000*60*60)) % 24);
@@ -128,22 +147,25 @@ public class homeFragment extends Fragment {
             }
         }
     }
+    
+    //sets up the counter in the fragment layout
     private void setUpCounter(TextView homeClass, TextView homeRoom, TextView timer, Context context){
-        scheduleElement element;
-
+        
+        //in case the arraylist is empty
         if (scheduleElement.SCArraylist.isEmpty()){
             homeClass.setText("No classes set");
             homeRoom.setText("No class set");
             timer.setText("00:00");
         }
         else {
+            //in case largest time in array is still less than current time
             int i = 0;
             if (getTimeMills() > scheduleElement.SCArraylist.get(scheduleElement.SCArraylist.size() - 1).getStartTime()) { //if the last start time in the array is less than the current time
                 element = scheduleElement.SCArraylist.get(i);
                 homeClass.setText(element.getClassID());
                 homeRoom.setText(element.getRoomID());
                 setFormatTime(timer, (element.getStartTime() + millisInWeek) - getTimeMills());
-            } else {
+            } else { //in case largest time in array is more than current time
                 while (getTimeMills() > scheduleElement.SCArraylist.get(i).getStartTime()) {
                     i++;
                 }
@@ -152,32 +174,38 @@ public class homeFragment extends Fragment {
                 homeRoom.setText(element.getRoomID());
                 setFormatTime(timer, element.getStartTime() - getTimeMills());
             }
-            this.element = element;
             notification(getTimeMills(),scheduleElement.SCArraylist.get(i),context);
             refresh(homeClass, homeRoom, timer,context);
         }
     }
 
+    //refreshes the page every second
     private void refresh(TextView homeClass, TextView homeRoom, TextView timer,Context context){
-        final Handler handler = new Handler();
-
-        final Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                setUpCounter(homeClass,homeRoom,timer,context);
-            }
-        };
-        handler.postDelayed(runnable, 1000);
+        if (getActivity() != null) {
+            
+            
+            final Handler handler = new Handler();
+            
+            final Runnable runnable = new Runnable() {
+                @Override
+                public void run() {
+                    setUpCounter(homeClass, homeRoom, timer, context);
+                }
+            };
+            handler.postDelayed(runnable, 1000);
+        }
     }
-
-    private void notification(int currentTime, scheduleElement element, Context context){
+    
+    //posts a notification 5 minutes before the start time of a class
+    public void notification(int currentTime, scheduleElement element, Context context){
+        Log.e("notification thingy", "it is working");
         if (!element.isMuteState()){
             if (currentTime==element.getStartTime()-300000){
 
                 String channelID = "STUDENT-SCHEDULER-APP";
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(context,channelID)
                         .setSmallIcon(R.drawable.ic_start_time)
-                        .setContentTitle(element.getClassID())
+                        .setContentTitle("Class in 5 minutes")
                         .setContentText("Class "+element.getClassID()+ " in room "+element.getRoomID()+" in 5 minutes")
                         .setPriority(NotificationCompat.PRIORITY_MAX);
 
@@ -203,5 +231,23 @@ public class homeFragment extends Fragment {
             }
         }
     }
+    
+    //returns the currently used element. used in serviceClass
+    public scheduleElement findSuitableElement(){
+        if (scheduleElement.SCArraylist.isEmpty()) {
+            return null;
+        }
+        else if (getTimeMills() > scheduleElement.SCArraylist.get(scheduleElement.SCArraylist.size() - 1).getStartTime()){
+            return scheduleElement.SCArraylist.get(0);
+        }
+        else {
+            int i =0;
+            while (getTimeMills() > scheduleElement.SCArraylist.get(i).getStartTime()) {
+                i++;
+            }
+            return scheduleElement.SCArraylist.get(i);
+        }
+    }
+    
 
 }

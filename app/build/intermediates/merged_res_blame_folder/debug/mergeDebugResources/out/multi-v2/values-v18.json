@@ -4,7 +4,7 @@
             "outputFile": "com.mbsstudentscheduler.app-mergeDebugResources-30:/values-v18/values-v18.xml",
             "map": [
                 {
-                    "source": "/home/manbit/.gradle/caches/transforms-4/b3b658aea3ee6e8129197e2579f3f988/transformed/appcompat-1.6.1/res/values-v18/values-v18.xml",
+                    "source": "C:\\Users\\manbit\\.gradle\\caches\\transforms-4\\a637f3543abeb697cfdfa5d7129dcb6c\\transformed\\appcompat-1.6.1\\res\\values-v18\\values-v18.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

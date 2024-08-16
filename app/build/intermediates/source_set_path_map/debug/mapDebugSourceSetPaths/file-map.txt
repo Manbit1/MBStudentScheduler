@@ -1,35 +1,35 @@
-com.mbsstudentscheduler.app-core-ktx-1.9.0-0 /home/manbit/.gradle/caches/transforms-4/03bdb28932595ba14d3f8fac9188dc9a/transformed/core-ktx-1.9.0/res
-com.mbsstudentscheduler.app-emoji2-views-helper-1.2.0-1 /home/manbit/.gradle/caches/transforms-4/2863808fed1125addcbf3c43616b5f7d/transformed/emoji2-views-helper-1.2.0/res
-com.mbsstudentscheduler.app-lifecycle-livedata-core-2.6.1-2 /home/manbit/.gradle/caches/transforms-4/318854356e3c715517f3a04566ab365e/transformed/lifecycle-livedata-core-2.6.1/res
-com.mbsstudentscheduler.app-startup-runtime-1.1.1-3 /home/manbit/.gradle/caches/transforms-4/335e4aa5a493dda596e7d961f5ed71cb/transformed/startup-runtime-1.1.1/res
-com.mbsstudentscheduler.app-annotation-experimental-1.3.0-4 /home/manbit/.gradle/caches/transforms-4/341af34cef5062140b9b0f8c9aa3fcff/transformed/annotation-experimental-1.3.0/res
-com.mbsstudentscheduler.app-constraintlayout-2.1.4-5 /home/manbit/.gradle/caches/transforms-4/4e469b63ebcb39936431e94600e56ebf/transformed/constraintlayout-2.1.4/res
-com.mbsstudentscheduler.app-material-1.11.0-6 /home/manbit/.gradle/caches/transforms-4/5220b0337db223cb65d98787f73cfb46/transformed/material-1.11.0/res
-com.mbsstudentscheduler.app-profileinstaller-1.3.0-7 /home/manbit/.gradle/caches/transforms-4/688af65855e07cd3c350332e129ad9c7/transformed/profileinstaller-1.3.0/res
-com.mbsstudentscheduler.app-drawerlayout-1.1.1-8 /home/manbit/.gradle/caches/transforms-4/6c3fe48e4794985a41a598da396cc017/transformed/drawerlayout-1.1.1/res
-com.mbsstudentscheduler.app-lifecycle-runtime-2.6.1-9 /home/manbit/.gradle/caches/transforms-4/75e910f773d105a025d4324e5cc3e524/transformed/lifecycle-runtime-2.6.1/res
-com.mbsstudentscheduler.app-swiperefreshlayout-1.1.0-10 /home/manbit/.gradle/caches/transforms-4/861e47b062d318dc1b2244966071c09b/transformed/swiperefreshlayout-1.1.0/res
-com.mbsstudentscheduler.app-lifecycle-viewmodel-2.6.1-11 /home/manbit/.gradle/caches/transforms-4/943b59fc86a1a1665c3d50a89d4a4b31/transformed/lifecycle-viewmodel-2.6.1/res
-com.mbsstudentscheduler.app-savedstate-1.2.1-12 /home/manbit/.gradle/caches/transforms-4/9cd85373162e0d24b8079d3e69169fd7/transformed/savedstate-1.2.1/res
-com.mbsstudentscheduler.app-appcompat-1.6.1-13 /home/manbit/.gradle/caches/transforms-4/b3b658aea3ee6e8129197e2579f3f988/transformed/appcompat-1.6.1/res
-com.mbsstudentscheduler.app-lifecycle-livedata-2.6.1-14 /home/manbit/.gradle/caches/transforms-4/b7b70446487e7e943e301f2e7b7452e3/transformed/lifecycle-livedata-2.6.1/res
-com.mbsstudentscheduler.app-lifecycle-viewmodel-savedstate-2.6.1-15 /home/manbit/.gradle/caches/transforms-4/bddf8788db993ac5a99cd03b421e98b0/transformed/lifecycle-viewmodel-savedstate-2.6.1/res
-com.mbsstudentscheduler.app-coordinatorlayout-1.1.0-16 /home/manbit/.gradle/caches/transforms-4/c24d6049c16e522232cec18f4901e267/transformed/coordinatorlayout-1.1.0/res
-com.mbsstudentscheduler.app-core-runtime-2.2.0-17 /home/manbit/.gradle/caches/transforms-4/c7eeac68b63e9c55605eb10807ef9384/transformed/core-runtime-2.2.0/res
-com.mbsstudentscheduler.app-core-1.9.0-18 /home/manbit/.gradle/caches/transforms-4/cafc36e40355ffa3bac68115db765d62/transformed/core-1.9.0/res
-com.mbsstudentscheduler.app-lifecycle-process-2.6.1-19 /home/manbit/.gradle/caches/transforms-4/d26c8f7ef2f5c07f99ed2a60b28611ce/transformed/lifecycle-process-2.6.1/res
-com.mbsstudentscheduler.app-fragment-1.3.6-20 /home/manbit/.gradle/caches/transforms-4/d46c4959e0f150117b7fb3bcde084be0/transformed/fragment-1.3.6/res
-com.mbsstudentscheduler.app-viewpager2-1.0.0-21 /home/manbit/.gradle/caches/transforms-4/dba95741fe934b408328cd422f766707/transformed/viewpager2-1.0.0/res
-com.mbsstudentscheduler.app-recyclerview-1.1.0-22 /home/manbit/.gradle/caches/transforms-4/dbd4a831fad8576fa5c459966717b96e/transformed/recyclerview-1.1.0/res
-com.mbsstudentscheduler.app-cardview-1.0.0-23 /home/manbit/.gradle/caches/transforms-4/e78d6a8c84988fd5ab2f261229f386ab/transformed/cardview-1.0.0/res
-com.mbsstudentscheduler.app-appcompat-resources-1.6.1-24 /home/manbit/.gradle/caches/transforms-4/eaa0cc81078396249a377f6655d85577/transformed/appcompat-resources-1.6.1/res
-com.mbsstudentscheduler.app-transition-1.2.0-25 /home/manbit/.gradle/caches/transforms-4/f46c8a7362171732ee68beaebe963b7d/transformed/transition-1.2.0/res
-com.mbsstudentscheduler.app-emoji2-1.2.0-26 /home/manbit/.gradle/caches/transforms-4/f7d2a513e9189ea45d7dcb20c9f87884/transformed/emoji2-1.2.0/res
-com.mbsstudentscheduler.app-activity-1.8.0-27 /home/manbit/.gradle/caches/transforms-4/fa208d81e7f8c69983275fc6e3f99fbe/transformed/activity-1.8.0/res
-com.mbsstudentscheduler.app-pngs-28 /home/manbit/Documents/projects/android/MB's student scheduler/app/build/generated/res/pngs/debug
-com.mbsstudentscheduler.app-resValues-29 /home/manbit/Documents/projects/android/MB's student scheduler/app/build/generated/res/resValues/debug
-com.mbsstudentscheduler.app-packageDebugResources-30 /home/manbit/Documents/projects/android/MB's student scheduler/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.mbsstudentscheduler.app-packageDebugResources-31 /home/manbit/Documents/projects/android/MB's student scheduler/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.mbsstudentscheduler.app-debug-32 /home/manbit/Documents/projects/android/MB's student scheduler/app/build/intermediates/merged_res/debug/mergeDebugResources
-com.mbsstudentscheduler.app-debug-33 /home/manbit/Documents/projects/android/MB's student scheduler/app/src/debug/res
-com.mbsstudentscheduler.app-main-34 /home/manbit/Documents/projects/android/MB's student scheduler/app/src/main/res
+com.mbsstudentscheduler.app-lifecycle-livedata-core-2.6.1-0 C:\Users\manbit\.gradle\caches\transforms-4\09eaac1feabffa6cc04a1d25b237695f\transformed\lifecycle-livedata-core-2.6.1\res
+com.mbsstudentscheduler.app-coordinatorlayout-1.1.0-1 C:\Users\manbit\.gradle\caches\transforms-4\0ad01e3aece081590fed9e8f52aff697\transformed\coordinatorlayout-1.1.0\res
+com.mbsstudentscheduler.app-annotation-experimental-1.3.0-2 C:\Users\manbit\.gradle\caches\transforms-4\12ddca21e4a1f4891f3ae1e3a8b8d8e7\transformed\annotation-experimental-1.3.0\res
+com.mbsstudentscheduler.app-drawerlayout-1.1.1-3 C:\Users\manbit\.gradle\caches\transforms-4\14b967742c931c301e0efbad30577eac\transformed\drawerlayout-1.1.1\res
+com.mbsstudentscheduler.app-lifecycle-viewmodel-2.6.1-4 C:\Users\manbit\.gradle\caches\transforms-4\1c66012615438adeba21d8f23175d12d\transformed\lifecycle-viewmodel-2.6.1\res
+com.mbsstudentscheduler.app-activity-1.8.0-5 C:\Users\manbit\.gradle\caches\transforms-4\4685378b9790a9bc66a57f5d83903da9\transformed\activity-1.8.0\res
+com.mbsstudentscheduler.app-viewpager2-1.0.0-6 C:\Users\manbit\.gradle\caches\transforms-4\469f88c2a11f8334c1981af6fc6f8ba9\transformed\viewpager2-1.0.0\res
+com.mbsstudentscheduler.app-core-ktx-1.9.0-7 C:\Users\manbit\.gradle\caches\transforms-4\4994eb6208b768d9d501fe9da6460e9e\transformed\core-ktx-1.9.0\res
+com.mbsstudentscheduler.app-core-1.9.0-8 C:\Users\manbit\.gradle\caches\transforms-4\556edc2893255bcc9b2dad75028d3361\transformed\core-1.9.0\res
+com.mbsstudentscheduler.app-lifecycle-viewmodel-savedstate-2.6.1-9 C:\Users\manbit\.gradle\caches\transforms-4\5a7446d46377dbd7bf90b0fd38fa29be\transformed\lifecycle-viewmodel-savedstate-2.6.1\res
+com.mbsstudentscheduler.app-lifecycle-process-2.6.1-10 C:\Users\manbit\.gradle\caches\transforms-4\5b2748f0e5cb4ab35758137a69255fa5\transformed\lifecycle-process-2.6.1\res
+com.mbsstudentscheduler.app-core-runtime-2.2.0-11 C:\Users\manbit\.gradle\caches\transforms-4\649a44565f84119ea1b85840e636f3f2\transformed\core-runtime-2.2.0\res
+com.mbsstudentscheduler.app-recyclerview-1.1.0-12 C:\Users\manbit\.gradle\caches\transforms-4\70a4f8fa86f925670b7b854b6284fa40\transformed\recyclerview-1.1.0\res
+com.mbsstudentscheduler.app-fragment-1.3.6-13 C:\Users\manbit\.gradle\caches\transforms-4\7631afea239cbc6916d85c277fdf3618\transformed\fragment-1.3.6\res
+com.mbsstudentscheduler.app-cardview-1.0.0-14 C:\Users\manbit\.gradle\caches\transforms-4\795cc137040b6be97cc8f6f081df6b7c\transformed\cardview-1.0.0\res
+com.mbsstudentscheduler.app-swiperefreshlayout-1.1.0-15 C:\Users\manbit\.gradle\caches\transforms-4\7edcd1fc0c40a14b0a6b160c853b9fa6\transformed\swiperefreshlayout-1.1.0\res
+com.mbsstudentscheduler.app-lifecycle-runtime-2.6.1-16 C:\Users\manbit\.gradle\caches\transforms-4\87d606effbb87403564eb158a273fe3f\transformed\lifecycle-runtime-2.6.1\res
+com.mbsstudentscheduler.app-savedstate-1.2.1-17 C:\Users\manbit\.gradle\caches\transforms-4\89885046befe0b4d0686261573b5ba6a\transformed\savedstate-1.2.1\res
+com.mbsstudentscheduler.app-profileinstaller-1.3.0-18 C:\Users\manbit\.gradle\caches\transforms-4\902ea05a56b1231337c270af444b1a24\transformed\profileinstaller-1.3.0\res
+com.mbsstudentscheduler.app-constraintlayout-2.1.4-19 C:\Users\manbit\.gradle\caches\transforms-4\9d68bfa23ed7a13a9231c769f7dd68c5\transformed\constraintlayout-2.1.4\res
+com.mbsstudentscheduler.app-appcompat-1.6.1-20 C:\Users\manbit\.gradle\caches\transforms-4\a637f3543abeb697cfdfa5d7129dcb6c\transformed\appcompat-1.6.1\res
+com.mbsstudentscheduler.app-material-1.11.0-21 C:\Users\manbit\.gradle\caches\transforms-4\ad087d089d64718d261ce2280a247900\transformed\material-1.11.0\res
+com.mbsstudentscheduler.app-lifecycle-livedata-2.6.1-22 C:\Users\manbit\.gradle\caches\transforms-4\bdad89b79ab50c130671774ae30b5195\transformed\lifecycle-livedata-2.6.1\res
+com.mbsstudentscheduler.app-emoji2-1.2.0-23 C:\Users\manbit\.gradle\caches\transforms-4\c6e28afc157affb5c48d0a95b5680366\transformed\emoji2-1.2.0\res
+com.mbsstudentscheduler.app-startup-runtime-1.1.1-24 C:\Users\manbit\.gradle\caches\transforms-4\d6b55ec1353d086715dba11681dd1e6d\transformed\startup-runtime-1.1.1\res
+com.mbsstudentscheduler.app-transition-1.2.0-25 C:\Users\manbit\.gradle\caches\transforms-4\f64f10d494da06339c09fb03d888c2ae\transformed\transition-1.2.0\res
+com.mbsstudentscheduler.app-emoji2-views-helper-1.2.0-26 C:\Users\manbit\.gradle\caches\transforms-4\f90e3b8e81019ec60ac791e26005ccfd\transformed\emoji2-views-helper-1.2.0\res
+com.mbsstudentscheduler.app-appcompat-resources-1.6.1-27 C:\Users\manbit\.gradle\caches\transforms-4\fd7c6ecd6eaaf7618109f4962f925661\transformed\appcompat-resources-1.6.1\res
+com.mbsstudentscheduler.app-pngs-28 C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\build\generated\res\pngs\debug
+com.mbsstudentscheduler.app-resValues-29 C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\build\generated\res\resValues\debug
+com.mbsstudentscheduler.app-packageDebugResources-30 C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.mbsstudentscheduler.app-packageDebugResources-31 C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.mbsstudentscheduler.app-debug-32 C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.mbsstudentscheduler.app-debug-33 C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\src\debug\res
+com.mbsstudentscheduler.app-main-34 C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\src\main\res
