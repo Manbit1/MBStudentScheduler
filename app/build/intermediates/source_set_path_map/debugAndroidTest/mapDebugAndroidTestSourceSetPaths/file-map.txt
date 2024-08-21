@@ -1,0 +1,6 @@
+com.mbsstudentscheduler.test.app-annotation-experimental-1.3.0-0 C:\Users\manbit\.gradle\caches\transforms-4\12ddca21e4a1f4891f3ae1e3a8b8d8e7\transformed\annotation-experimental-1.3.0\res
+com.mbsstudentscheduler.test.app-core-1.5.0-1 C:\Users\manbit\.gradle\caches\transforms-4\c1fb9c13222d0642fe2abe54c7b088ea\transformed\core-1.5.0\res
+com.mbsstudentscheduler.test.app-androidTest-2 C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\build\generated\res\resValues\androidTest\debug
+com.mbsstudentscheduler.test.app-mergeDebugAndroidTestResources-3 C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.mbsstudentscheduler.test.app-mergeDebugAndroidTestResources-4 C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.mbsstudentscheduler.test.app-debugAndroidTest-5 C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

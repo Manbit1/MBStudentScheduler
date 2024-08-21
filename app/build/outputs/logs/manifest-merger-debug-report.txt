@@ -98,7 +98,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\manbit\.gradle\cac
 	android:supportsRtl
 		ADDED from C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\src\main\AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\src\main\AndroidManifest.xml:13:9-51
+		ADDED from C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\src\main\AndroidManifest.xml:13:9-47
 	android:fullBackupContent
 		ADDED from C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\src\main\AndroidManifest.xml:11:9-54
 	android:roundIcon

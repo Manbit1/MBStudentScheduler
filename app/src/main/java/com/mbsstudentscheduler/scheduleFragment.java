@@ -16,6 +16,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class scheduleFragment extends Fragment {
     SwipeRefreshLayout swipeRefreshLayout;
+    public static RecyclerView recyclerView;
  
     @Nullable
     @Override
@@ -33,7 +34,7 @@ public class scheduleFragment extends Fragment {
                 item.showDialog(getContext());
             }
         });
-        RecyclerView recyclerView = view.findViewById(R.id.scheduleRecy);
+        recyclerView = view.findViewById(R.id.scheduleRecy);
         recyclerViewAdapt adapter = new recyclerViewAdapt(getContext(),scheduleElement.SCArraylist);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -58,6 +59,7 @@ public class scheduleFragment extends Fragment {
     private void dbloader() {
         SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(requireContext());
         sqLiteManager.putDataInArray();
+        scheduleElement.SCArraylist =algorithms.quicksort(scheduleElement.SCArraylist);
     }
     
     public static void refreshScheduleFragment(Context context, RecyclerView recyclerView){

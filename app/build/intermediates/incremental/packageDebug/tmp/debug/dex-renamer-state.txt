@@ -1,4 +1,4 @@
-#Fri Aug 16 09:35:36 AST 2024
+#Mon Aug 19 12:17:12 AST 2024
 base.0=C\:\\Users\\manbit\\AndroidStudioProjects\\MBSstudentscheduler\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\manbit\\AndroidStudioProjects\\MBSstudentscheduler\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\manbit\\AndroidStudioProjects\\MBSstudentscheduler\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex

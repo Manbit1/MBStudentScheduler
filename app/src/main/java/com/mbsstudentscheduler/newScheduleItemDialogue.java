@@ -33,6 +33,8 @@ public class newScheduleItemDialogue{
     private scheduleElement element;
     private scheduleElement newElement;
     
+    
+    //new Dialogue for new Item
     public void showDialog(Context context){
         //start the dialogue window and assignt to a res
         Dialog dialog = new Dialog(context);
@@ -95,6 +97,7 @@ public class newScheduleItemDialogue{
                         element = new scheduleElement (getClassID(),getRoomID(),getStartTimeMil(),getEndTimeMil(),alarmbool);
                         SQLiteManager manager = new SQLiteManager(context);
                         manager.insertElement(element);
+                        scheduleFragment.refreshScheduleFragment(context,scheduleFragment.recyclerView);
                         Toast.makeText(context,"refresh the page",Toast.LENGTH_LONG).show();
                         dialog.dismiss();
                     }
@@ -127,6 +130,7 @@ public class newScheduleItemDialogue{
             });
             dialog.show();
     }
+    //show dialog for updating an element
     public void showDialog(Context context, scheduleElement elem){
         element=elem;
         //start the dialogue window and assignt to a res
@@ -191,6 +195,7 @@ public class newScheduleItemDialogue{
                     newElement = new scheduleElement (getClassID(),getRoomID(),getStartTimeMil(),getEndTimeMil(),alarmbool);
                     SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(context);
                     sqLiteManager.updateElement(element,newElement);
+                    scheduleFragment.refreshScheduleFragment(context,scheduleFragment.recyclerView);
                     Toast.makeText(context,"refresh the page",Toast.LENGTH_LONG).show();
                     dialog.dismiss();
                 }

@@ -81,22 +81,22 @@ public class serviceClass extends Service {
     private void singleNotif(int currentTime, scheduleElement element) {
         Log.d("notification thingy", "second one is working");
         if (element != null) {
-            
             if (!element.isMuteState()) {
                 if (currentTime == element.getStartTime() - 300000) {
+                    Intent intent = new Intent(context, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    
+                    PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_MUTABLE);
                     
                     String channelID = "STUDENT-SCHEDULER-APP";
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelID)
                             .setSmallIcon(R.drawable.ic_start_time)
                             .setContentTitle(element.getClassID())
                             .setContentText("Class " + element.getClassID() + " in room " + element.getRoomID() + " in 5 minutes")
-                            .setPriority(NotificationCompat.PRIORITY_MAX);
+                            .setPriority(NotificationCompat.PRIORITY_MAX)
+                            .setContentIntent(pendingIntent);
                     
-                    Intent intent = new Intent(context, homeFragment.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    
-                    PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_MUTABLE);
-                    builder.setContentIntent(pendingIntent);
+
                     NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                     
                     NotificationChannel notificationChannel = notificationManager.getNotificationChannel(channelID);

@@ -46,8 +46,8 @@
 28-->C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\src\main\AndroidManifest.xml:11:9-54
 29        android:icon="@drawable/ic_notif"
 29-->C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\src\main\AndroidManifest.xml:12:9-42
-30        android:label="mb&apos;s student scheduler pt2"
-30-->C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\src\main\AndroidManifest.xml:13:9-51
+30        android:label="mb&apos;s student scheduler"
+30-->C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\src\main\AndroidManifest.xml:13:9-47
 31        android:roundIcon="@mipmap/ic_launcher_round"
 31-->C:\Users\manbit\AndroidStudioProjects\MBSstudentscheduler\app\src\main\AndroidManifest.xml:14:9-54
 32        android:supportsRtl="true"

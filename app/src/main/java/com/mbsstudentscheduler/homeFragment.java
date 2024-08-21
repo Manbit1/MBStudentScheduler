@@ -103,6 +103,7 @@ public class homeFragment extends Fragment {
         scheduleElement.SCArraylist.clear();
         SQLiteManager sqLiteManager = SQLiteManager.instanceOfDatabase(requireContext());
         sqLiteManager.putDataInArray();
+        scheduleElement.SCArraylist =algorithms.quicksort(scheduleElement.SCArraylist);
     }
 
     //displays the time in D/HH/MM format
@@ -174,7 +175,7 @@ public class homeFragment extends Fragment {
                 homeRoom.setText(element.getRoomID());
                 setFormatTime(timer, element.getStartTime() - getTimeMills());
             }
-            notification(getTimeMills(),scheduleElement.SCArraylist.get(i),context);
+//            notification(getTimeMills(),scheduleElement.SCArraylist.get(i),context);
             refresh(homeClass, homeRoom, timer,context);
         }
     }
@@ -197,40 +198,40 @@ public class homeFragment extends Fragment {
     }
     
     //posts a notification 5 minutes before the start time of a class
-    public void notification(int currentTime, scheduleElement element, Context context){
-        Log.e("notification thingy", "it is working");
-        if (!element.isMuteState()){
-            if (currentTime==element.getStartTime()-300000){
-
-                String channelID = "STUDENT-SCHEDULER-APP";
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(context,channelID)
-                        .setSmallIcon(R.drawable.ic_start_time)
-                        .setContentTitle("Class in 5 minutes")
-                        .setContentText("Class "+element.getClassID()+ " in room "+element.getRoomID()+" in 5 minutes")
-                        .setPriority(NotificationCompat.PRIORITY_MAX);
-
-                Intent intent = new Intent(context, homeFragment.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-                PendingIntent pendingIntent = PendingIntent.getActivity(context,0,intent,PendingIntent.FLAG_MUTABLE);
-                builder.setContentIntent(pendingIntent);
-                NotificationManager notificationManager = (NotificationManager) requireActivity().getSystemService(Context.NOTIFICATION_SERVICE);
-
-                NotificationChannel notificationChannel = notificationManager.getNotificationChannel(channelID);
-                if (notificationChannel == null){
-                    int importance = notificationManager.IMPORTANCE_HIGH;
-                    notificationChannel = new NotificationChannel(channelID,"some description", importance);
-                    notificationChannel.enableVibration(true);
-                    notificationManager.createNotificationChannel(notificationChannel);
-                }
-                notificationManager.notify(0,builder.build());
-                element.setMuteState(true);
-            }
-            else if (currentTime<element.getStartTime()-300000){
-                element.setMuteState(false);
-            }
-        }
-    }
+//    public void notification(int currentTime, scheduleElement element, Context context){
+//        Log.e("notification thingy", "it is working");
+//        if (!element.isMuteState()){
+//            if (currentTime==element.getStartTime()-300000){
+//
+//                String channelID = "STUDENT-SCHEDULER-APP";
+//                NotificationCompat.Builder builder = new NotificationCompat.Builder(context,channelID)
+//                        .setSmallIcon(R.drawable.ic_start_time)
+//                        .setContentTitle("Class in 5 minutes")
+//                        .setContentText("Class "+element.getClassID()+ " in room "+element.getRoomID()+" in 5 minutes")
+//                        .setPriority(NotificationCompat.PRIORITY_MAX);
+//
+//                Intent intent = new Intent(context, homeFragment.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//
+//                PendingIntent pendingIntent = PendingIntent.getActivity(context,0,intent,PendingIntent.FLAG_MUTABLE);
+//                builder.setContentIntent(pendingIntent);
+//                NotificationManager notificationManager = (NotificationManager) requireActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+//
+//                NotificationChannel notificationChannel = notificationManager.getNotificationChannel(channelID);
+//                if (notificationChannel == null){
+//                    int importance = notificationManager.IMPORTANCE_HIGH;
+//                    notificationChannel = new NotificationChannel(channelID,"some description", importance);
+//                    notificationChannel.enableVibration(true);
+//                    notificationManager.createNotificationChannel(notificationChannel);
+//                }
+//                notificationManager.notify(0,builder.build());
+//                element.setMuteState(true);
+//            }
+//            else if (currentTime<element.getStartTime()-300000){
+//                element.setMuteState(false);
+//            }
+//        }
+//    }
     
     //returns the currently used element. used in serviceClass
     public scheduleElement findSuitableElement(){
